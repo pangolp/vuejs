@@ -6,7 +6,8 @@ var vm = new Vue
 		{
 			numero1: 100,
 			numero2: 10,
-			resultado12: 0
+			numero3: 4,
+			numero4: 40
 		}
 	}
 )

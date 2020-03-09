@@ -26,9 +26,27 @@
 					</div>
 				</form>
 				<p>Ejemplo, si introdujo 100 en el primer casillero y en el segundo 10, la respuesta debería de ser 10.</p>
-			</div>
-			<div class="alert alert-primary text-center" role="alert">
-				El <strong>{{ numero2 }}%</strong> de <strong>{{ numero1 }}</strong> es: <strong>{{ (numero2*numero1)/100 }}</strong>
+				<div class="alert alert-primary text-center" role="alert">
+					El <strong>{{ numero2 }}%</strong> de <strong>{{ numero1 }}</strong> es: <strong>{{ (numero2*numero1)/100 }}</strong>
+				</div>
+				<hr>
+				<p>Calculo del total, a partir de la cantidad elegida y el porcentaje que representa sobre el total.</p>
+				<form>
+					<div class="form-group">
+						<label for="inputnumber">Numero</label>
+						<input type="number" class="form-control" id="inputnumber" aria-describedby="numberHelp" v-model="numero3">
+						<small id="numberHelp" class="form-text text-info">Aquí debe ingresar un número, para determinar en base al porcentaje, el número del que estamos hablando.</small>
+					</div>
+					<div class="form-group">
+						<label for="inputPorcentaje">Porcentaje</label>
+						<input type="number" class="form-control" id="inputPorcentaje" aria-describedby="numberHelp1" v-model="numero4">
+						<small id="numberHelp1" class="form-text text-info">Aquí se ingresaría el porcentaje que representa ese número por sobre el total.</small>
+					</div>
+				</form>
+				<p>Por ejemplo, si usted introduce el número 4 en el primer casillero y el 40 en el segundo, eso significa que el 4 es el 40% de 10.</p>
+				<div class="alert alert-success text-center" role="alert">
+					Si <strong>{{ numero3 }}</strong> es el <strong>{{ numero4 }}%</strong>. El número final es: <strong>{{ (numero3*100)/numero4 }}</strong>
+				</div>
 			</div>
 		</div>
 	</div>
