@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Calculadora de porcentajes</title>
+</head>
+<body>
+	<div id="app">
+		<div class="container">
+			<div class="col-md-12 mt-5">
+				<p><strong>Calcular una cantidad, a partir del porcentaje que representa sobre un total</strong></p>
+				<p><strong>Primer cálculo. Porcentaje de un numero a partir del ingreso de ambos.</strong></p>
+				<form>
+					<div class="form-group">
+						<label for="inputnumber">Número</label>
+						<input type="number" class="form-control" id="inputnumber" aria-describedby="numberHelp" v-model="numero1">
+						<small id="numberHelp" class="form-text text-muted">Aquí debe ingresa el numero al cual se le va a calcular el porcentaje. Ejemplo 100</small>
+					</div>
+					<div class="form-group">
+						<label for="inputPorcentaje">Porcentaje</label>
+						<input type="number" class="form-control" id="inputPorcentaje" aria-describedby="numberHelp1" v-model="numero2">
+						<small id="numberHelp1" class="form-text text-muted">Aquí debe ingresar el porcentaje, por ejemplo 10, para calcular el 10% (solo el numero)</small>
+					</div>
+				</form>
+				<p>Ejemplo, si introdujo 100 en el primer casillero y en el segundo 10, la respuesta debería de ser 10.</p>
+			</div>
+			<div class="alert alert-primary text-center" role="alert">
+				El <strong>{{ numero2 }}%</strong> de <strong>{{ numero1 }}</strong> es: <strong>{{ (numero2*numero1)/100 }}</strong>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+    	var vm = new Vue
+    	(
+    		{
+    			el: '#app',
+    			data:
+    			{
+    				numero1: 100,
+    				numero2: 10,
+    				resultado12: 0
+    			}
+    		}
+    	)
+    </script>
+</body>
+</html>
